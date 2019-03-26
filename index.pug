@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+html(lang="zh-hant-tw")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+    title dog&cat
+    link(rel="stylesheet", href="css/normalize.css")
+    link(rel="stylesheet", href="css/bootstrap.min.css")
+    link(rel="stylesheet", href="css/style.css")
+    script(defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js")
+  body
+    nav.navbar.navbar-default.navbar-fixed-top.font-sans
+      .container
+        .navbar-header
+          a.navbar-brand <strong>貓狗辨視</strong>
+        #visitors
+          .nav.navbar-nav.navbar-right
+            button.btn.btn-default.navbar-btn.btn-custom(type="button" data-target="#login" data-toggle="modal") 登入
+            button.btn.btn-default.navbar-btn.btn-custom(type="button" data-target="#register" data-toggle="modal") 註冊
+        #member
+          .navbar-web
+            .nav.navbar-nav.navbar-right
+              span#member-id e032386@gmail.com
+              button.btn.btn-default.navbar-btn.btn-custom#logout-button(type="button") 登出
+    section#current-block
+      .container.text-center.font-sans.veritcal
+        h2.heading 上傳貓貓狗狗吧
+        .row
+          .col-sm-12.content.image-upload-wrap
+            input.file-upload-input(type="file" onchange="readURL(this);" accept="images/*")
+            .drag-text
+              h3 點擊或將圖片拖曳到這裡
+          .col-sm-12.content.file-upload-content
+            img.file-upload-image(src="#", alt="你的圖片")
+            .image-title-wrap
+              button.remove-image(type="button" onclick="removeUpload()") 移除圖片
+                span.image-title uploaded image
+          button.btn.btn-default.btn-custom(type="button" data-target="#result" data-toggle="modal") 辨識是貓還是狗
+    .modal.fade.work-detail#login(role="dialog")
+      .modal-dialog
+        .modal-content.font-sans
+          .modal-header
+            h4.modal-title 登入
+            a#goto-register(herf="#") 還沒有帳號？前往註冊 >
+          .modal-body
+            form#login-form(method="post")
+              .form-group#login-email-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-envelope
+                  input#email.form-control(placeholder="電子郵件")
+                span.help-block.with-errors
+              .form-group#login-passsword-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-lock
+                  input#password.form-control(placeholder="密碼")
+                span.help-block.with-errors
+              a#goto-forget(herf="#") 忘記密碼?
+              button.btn.btn-primary.btn-block(type="submit" name="login_home" value="Login_Home") 登入
+    .modal.fade.work-detail#register(role="dialog")
+      .modal-dialog
+        .modal-content.font-sans
+          .modal-header
+            h4.modal-title 註冊
+            a#goto-login(herf="#") 已經有帳號？登入 >
+          .modal-body
+            form#register-form(data-toggle="validator" role="form" method="post")
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-envelope
+                  input#email.form-control(placeholder="電子郵件")
+                span.help-block.with-errors
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-lock
+                  input#password.form-control(placeholder="密碼")
+                span.help-block.with-errors
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-lock
+                  input#re-password.form-control(placeholder="確認密碼")
+                span.help-block.with-errors
+              button.btn.btn-primary.btn-block(type="submit" name="register_home" value="Register_Home") 註冊
+    .modal.fade.work-detail#forget(role="dialog")
+      .modal-dialog
+        .modal-content.font-sans
+          .modal-header
+            h4.modal-title 忘記密碼
+          .modal-body
+            span.context 請輸入註冊時設定的電子郵件帳號<br>我們將寄送一封電子郵件協助您重設密碼
+            form
+              .input-group
+                span.input-group-addon
+                  i.fas.fa-envelope
+                input#email.form-control(placeholder="電子郵件")
+              button.btn.btn-primary.btn-custom.btn-cancel(type="cancel") 取消
+              button.btn.btn-primary.btn-custom.btn-right#goto-sent(type="submit") 重設密碼
+            span.prompt 電子郵件將在數分鐘後送達
+    .modal.fade.work-detail#sent(role="dialog")
+      .modal-dialog
+        .modal-content.font-sans
+          .modal-header
+            h4.modal-title 重設密碼郵件已發送
+          .modal-body
+            span 我們已經寄送一封重設密碼郵件至您的信箱<br>
+            span danny@cmoney.com.tw
+            span <br>請依照指示重設密碼
+            span.highlight <br>沒有收到密碼重設信嗎？
+            button.btn.btn-primary.btn-custom.btn-right(type="submit") 再寄一次
+    .modal.fade.work-detail#reset-password(role="dialog")
+      .modal-dialog
+        .modal-content.font-sans
+          .modal-header
+            h4.modal-title 重設密碼
+          .modal-body
+            form
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-lock
+                  input#password.form-control(placeholder="新密碼")
+                span.help-block.with-errors
+              .form-group
+                .input-group
+                  span.input-group-addon
+                    i.fas.fa-lock
+                  input#re-password.form-control(placeholder="確認新密碼")
+                span.help-block.with-errors
+              button.btn.btn-primary.btn-custom.btn-cancel(type="cancel") 取消
+              button.btn.btn-primary.btn-custom.btn-right#goto-sent(type="submit") 重設密碼
+    .modal.fade.work-detail#result(role="dialog")
+      .modal-dialog.modal-sm
+        .modal-content.font-sans
+          .modal-body.text-center
+            form#play-form(method="post")
+              h3.title 這是一隻狗
+              button.btn.btn-primary.btn-custom.answer-select(type="submit") 重新上傳
+    footer
+      .container
+        p Copyright © 2019s test. All Rights Reserved.
+  script(src="js/jquery-3.1.1.min.js")
+  script(src="js/bootstrap.min.js")
+  script(src="js/validator.min.js")
+  script(src="js/index.js")

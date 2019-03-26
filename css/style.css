@@ -1,0 +1,352 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  position: relative;
+  background-color: #F2F2F2; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "source-han-sans-traditional", sans-serif;
+  font-weight: 600; }
+
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "source-han-sans-traditional", sans-serif;
+  font-weight: 300; }
+
+nav.navbar {
+  background-color: #fff;
+  border: 0px; }
+  nav.navbar .navbar-brand {
+    color: #60758d; }
+    nav.navbar .navbar-brand:hover {
+      color: #60758d; }
+  nav.navbar .navbar-nav .btn-custom {
+    transition: 0.25s;
+    border-radius: 20px;
+    padding: 6px 26px;
+    border-color: #60758d;
+    color: #60758d;
+    margin-right: 15px; }
+    nav.navbar .navbar-nav .btn-custom:hover {
+      background-color: #60758d;
+      color: #fff; }
+    nav.navbar .navbar-nav .btn-custom:focus {
+      outline: none;
+      background-color: #FFF;
+      color: #60758d; }
+    nav.navbar .navbar-nav .btn-custom:active {
+      background-color: #60758d;
+      color: #fff; }
+  nav.navbar #member {
+    display: block; }
+    nav.navbar #member span {
+      vertical-align: middle; }
+    nav.navbar #member .count {
+      padding: 0 10px;
+      font-size: 1.8rem;
+      font-weight: bold; }
+    nav.navbar #member #member-id {
+      color: #777;
+      margin-right: 8px; }
+    nav.navbar #member .navbar-mob {
+      display: none; }
+
+@media screen and (max-width: 767px) {
+  nav.navbar .navbar-header {
+    float: left; }
+  nav.navbar .navbar-nav {
+    margin: 0; }
+    nav.navbar .navbar-nav .btn-custom {
+      margin-right: 0;
+      margin-left: 8px; }
+  nav.navbar .navbar-right {
+    float: right; }
+  nav.navbar #member .navbar-web {
+    display: none; }
+  nav.navbar #member .navbar-mob {
+    display: block; }
+  nav.navbar #member #member-id {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 25vw; }
+  nav.navbar #member .navbar-text {
+    display: inline-block;
+    clear: both;
+    margin-right: 12px; } }
+header {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 85%;
+  margin-bottom: 0; }
+  header .container {
+    color: #555;
+    padding: 200px 0px; }
+  header .heading {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0px 0px 10px #333; }
+  header .text {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 0px 0px 10px #333; }
+  header .btn-custom {
+    transition: 0.25s;
+    border-radius: 30px;
+    padding: 16px 60px;
+    font-size: 1.8rem;
+    margin: 20px auto;
+    background-color: #b73030;
+    border-color: transparent;
+    color: #fff; }
+    header .btn-custom:hover {
+      background-color: #ec3d3d;
+      color: #fff;
+      border-color: #ec3d3d; }
+
+section#current-block, section#previous-block, section#closed-block, section#rank {
+  background-color: #F2F2F2;
+  padding-top: 60px;
+  position: relative; }
+  section#current-block .veritcal, section#previous-block .veritcal, section#closed-block .veritcal, section#rank .veritcal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15%); }
+  section#current-block .heading, section#previous-block .heading, section#closed-block .heading, section#rank .heading {
+    font-size: 3rem;
+    color: #151719; }
+  section#current-block .view, section#previous-block .view, section#closed-block .view, section#rank .view {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.7)), url("https://cimg.cnyes.cool/prod/news/3943773/l/c2a9717b3667bc5eacfb01dc47b04105.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+    position: relative; }
+    section#current-block .view .description, section#previous-block .view .description, section#closed-block .view .description, section#rank .view .description {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      left: 0; }
+    section#current-block .view .title, section#previous-block .view .title, section#closed-block .view .title, section#rank .view .title {
+      color: #fff;
+      font-size: 2.4rem; }
+    section#current-block .view .text, section#previous-block .view .text, section#closed-block .view .text, section#rank .view .text {
+      color: #fff;
+      font-size: 1.4rem; }
+  section#current-block .timer, section#previous-block .timer, section#closed-block .timer, section#rank .timer {
+    font-size: 2.2rem; }
+  section#current-block .people, section#previous-block .people, section#closed-block .people, section#rank .people {
+    font-size: 1.6rem; }
+  section#current-block .btn-custom, section#previous-block .btn-custom, section#closed-block .btn-custom, section#rank .btn-custom {
+    margin: 20px 22px;
+    padding: 16px 24px;
+    font-size: 1.8rem;
+    border-color: transparent;
+    color: #fff;
+    background-color: #4f77a5;
+    border-radius: 30px; }
+    section#current-block .btn-custom:hover, section#previous-block .btn-custom:hover, section#closed-block .btn-custom:hover, section#rank .btn-custom:hover {
+      background-color: #538bde;
+      color: #fff; }
+    section#current-block .btn-custom:focus, section#previous-block .btn-custom:focus, section#closed-block .btn-custom:focus, section#rank .btn-custom:focus {
+      outline: none;
+      color: #fff;
+      background-color: #4f77a5; }
+    section#current-block .btn-custom:active, section#previous-block .btn-custom:active, section#closed-block .btn-custom:active, section#rank .btn-custom:active {
+      background-color: #60758d;
+      color: #fff; }
+  section#current-block .btn-answer, section#current-block .btn-timeout, section#previous-block .btn-answer, section#previous-block .btn-timeout, section#closed-block .btn-answer, section#closed-block .btn-timeout, section#rank .btn-answer, section#rank .btn-timeout {
+    padding: 8px 24px;
+    font-size: 1.8rem;
+    margin: 20px 20px;
+    border-color: transparent;
+    color: #fff;
+    background-color: #2f4156;
+    border-radius: 0px;
+    cursor: default; }
+    section#current-block .btn-answer:focus, section#current-block .btn-timeout:focus, section#previous-block .btn-answer:focus, section#previous-block .btn-timeout:focus, section#closed-block .btn-answer:focus, section#closed-block .btn-timeout:focus, section#rank .btn-answer:focus, section#rank .btn-timeout:focus {
+      outline: none; }
+    section#current-block .btn-answer:active, section#current-block .btn-timeout:active, section#previous-block .btn-answer:active, section#previous-block .btn-timeout:active, section#closed-block .btn-answer:active, section#closed-block .btn-timeout:active, section#rank .btn-answer:active, section#rank .btn-timeout:active {
+      box-shadow: initial; }
+  section#current-block .btn-timeout, section#previous-block .btn-timeout, section#closed-block .btn-timeout, section#rank .btn-timeout {
+    display: none; }
+
+section#current-block .row:nth-child(3) {
+  margin-top: 20px; }
+
+section#previous-block, section#closed-block {
+  padding-top: 10px; }
+
+.file-upload-content {
+  display: none;
+  text-align: center; }
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer; }
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #4f77a5;
+  position: relative;
+  height: 45vh; }
+
+.image-dropping, .image-upload-wrap:hover {
+  background-color: #4f77a5;
+  border: 4px dashed #ffffff; }
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222; }
+
+.drag-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+  .drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #8da9d2;
+    padding: 175px 0; }
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px; }
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all 0.2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .remove-image:hover {
+    background: #c13b2a;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    cursor: pointer; }
+  .remove-image:active {
+    border: 0;
+    transition: all 0.2s ease; }
+
+@media screen and (max-width: 767px) {
+  section#current-block .view, section#previous-block .view, section#closed-block .view, section#rank .view {
+    height: 248px; }
+
+  section#rank .name {
+    font-size: 2rem;
+    text-align: center; }
+  section#rank .detail {
+    text-align: center; }
+    section#rank .detail .times:last-child {
+      margin-right: 0; } }
+#login .modal-content, #register .modal-content, #forget .modal-content, #sent .modal-content, #reset-password .modal-content {
+  padding: 25px 40px; }
+  #login .modal-content a, #register .modal-content a, #forget .modal-content a, #sent .modal-content a, #reset-password .modal-content a {
+    float: right;
+    color: #4f77a5; }
+  #login .modal-content a#goto-register, #login .modal-content a#goto-login, #register .modal-content a#goto-register, #register .modal-content a#goto-login, #forget .modal-content a#goto-register, #forget .modal-content a#goto-login, #sent .modal-content a#goto-register, #sent .modal-content a#goto-login, #reset-password .modal-content a#goto-register, #reset-password .modal-content a#goto-login {
+    margin-top: 15px; }
+  #login .modal-content a#goto-forget, #register .modal-content a#goto-forget, #forget .modal-content a#goto-forget, #sent .modal-content a#goto-forget, #reset-password .modal-content a#goto-forget {
+    margin-bottom: 15px; }
+#login .modal-header .modal-title, #register .modal-header .modal-title, #forget .modal-header .modal-title, #sent .modal-header .modal-title, #reset-password .modal-header .modal-title {
+  font-size: 2.4rem;
+  display: inline-block; }
+#login .modal-body .has-focus .input-group-addon, #register .modal-body .has-focus .input-group-addon, #forget .modal-body .has-focus .input-group-addon, #sent .modal-body .has-focus .input-group-addon, #reset-password .modal-body .has-focus .input-group-addon {
+  border-color: #538bde; }
+#login .modal-body .has-focus .form-control, #register .modal-body .has-focus .form-control, #forget .modal-body .has-focus .form-control, #sent .modal-body .has-focus .form-control, #reset-password .modal-body .has-focus .form-control {
+  border-color: #538bde; }
+#login .modal-body .input-group-addon, #register .modal-body .input-group-addon, #forget .modal-body .input-group-addon, #sent .modal-body .input-group-addon, #reset-password .modal-body .input-group-addon {
+  background-color: #FFF;
+  border-right: 0px; }
+#login .modal-body .input-group, #register .modal-body .input-group, #forget .modal-body .input-group, #sent .modal-body .input-group, #reset-password .modal-body .input-group {
+  margin-bottom: 15px; }
+#login .modal-body .form-control, #register .modal-body .form-control, #forget .modal-body .form-control, #sent .modal-body .form-control, #reset-password .modal-body .form-control {
+  border-left: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0px; }
+#login .modal-body .help-block, #register .modal-body .help-block, #forget .modal-body .help-block, #sent .modal-body .help-block, #reset-password .modal-body .help-block {
+  margin: 0; }
+#login .modal-body .context, #register .modal-body .context, #forget .modal-body .context, #sent .modal-body .context, #reset-password .modal-body .context {
+  display: block;
+  margin-bottom: 15px; }
+#login .modal-body .prompt, #register .modal-body .prompt, #forget .modal-body .prompt, #sent .modal-body .prompt, #reset-password .modal-body .prompt {
+  display: block;
+  text-align: right;
+  margin-top: 15px; }
+#login .modal-body .btn-primary, #register .modal-body .btn-primary, #forget .modal-body .btn-primary, #sent .modal-body .btn-primary, #reset-password .modal-body .btn-primary {
+  background-color: #4f77a5;
+  border-color: #4f77a5; }
+#login .modal-body .btn-custom, #register .modal-body .btn-custom, #forget .modal-body .btn-custom, #sent .modal-body .btn-custom, #reset-password .modal-body .btn-custom {
+  padding: 8px 64px; }
+#login .modal-body .btn-cancel, #register .modal-body .btn-cancel, #forget .modal-body .btn-cancel, #sent .modal-body .btn-cancel, #reset-password .modal-body .btn-cancel {
+  background-color: #FFF;
+  color: #4f77a5; }
+#login .modal-body .btn-right, #register .modal-body .btn-right, #forget .modal-body .btn-right, #sent .modal-body .btn-right, #reset-password .modal-body .btn-right {
+  float: right; }
+#login .modal-body .highlight, #register .modal-body .highlight, #forget .modal-body .highlight, #sent .modal-body .highlight, #reset-password .modal-body .highlight {
+  margin: 20px auto;
+  color: #aaa;
+  font-size: 1.6rem; }
+
+#login #login-email-group .input-group, #login #login-password-group .input-group {
+  margin-bottom: 15px; }
+#login #login-email-group .help-block, #login #login-password-group .help-block {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+#play-current .answer, #play-previous .answer {
+  font-weight: bold;
+  padding-left: 4px; }
+#play-current .btn-custom, #play-previous .btn-custom {
+  margin: 12px 8px;
+  padding: 8px 16px;
+  font-size: 1.8rem; }
+
+footer {
+  background-color: #8b8b8b;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  footer p {
+    margin-bottom: 0px; }
+
+@media screen and (min-width: 768px) {
+  #login .modal-dialog, #register .modal-dialog, #forget .modal-dialog, #sent .modal-dialog, #reset-password .modal-dialog {
+    margin-top: 180px; }
+
+  #alert .modal-dialog {
+    margin-top: 165px; } }
+
+/*# sourceMappingURL=style.css.map */

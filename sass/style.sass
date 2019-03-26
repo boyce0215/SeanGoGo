@@ -1,0 +1,387 @@
+@charset "UTF-8"
+$color_lightgray: #fafafa
+$color_gray: #8b8b8b
+$color_text_a: #333
+$color_text: #777
+
+html
+  font-size: 62.5%
+body
+  position: relative
+  background-color: #F2F2F2
+*
+  // box-sizing: border-box
+a
+  cursor: pointer
+  text-decoration: none
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6
+  // font-weight: bold
+  // 
+  font-family: -apple-system, BlinkMacSystemFont, "source-han-sans-traditional", sans-serif
+  font-weight: 600
+.font-sans
+  font-family: -apple-system, BlinkMacSystemFont, "source-han-sans-traditional", sans-serif
+  font-weight: 300
+nav.navbar
+  background-color: #fff
+  border: 0px
+  .navbar-brand
+    color: #60758d
+    &:hover
+      color: #60758d
+  .navbar-nav
+    .btn-custom
+      transition: 0.25s
+      border-radius: 20px
+      padding: 6px 26px
+      border-color: #60758d
+      color: #60758d
+      margin-right: 15px
+      &:hover
+        background-color: #60758d
+        color: #fff
+      &:focus
+        outline: none
+        background-color: #FFF
+        color: #60758d
+      &:active
+        background-color: #60758d
+        color: #fff
+  #visitors
+    // display: none
+  #member
+    display: block
+    span
+      vertical-align: middle
+    .count
+      padding: 0 10px
+      font-size: 1.8rem
+      font-weight: bold
+    #member-id
+      color: #777
+      margin-right: 8px
+    .navbar-mob
+      display: none
+@media screen and (max-width: 767px)
+  nav.navbar
+    .navbar-header
+      float: left
+    .navbar-nav
+      margin: 0
+      .btn-custom
+        margin-right: 0
+        margin-left: 8px
+    .navbar-right
+      float: right
+    #member
+      .navbar-web
+        display: none
+      .navbar-mob
+        display: block
+      #member-id
+        overflow : hidden
+        text-overflow : ellipsis
+        white-space : nowrap
+        display: inline-block
+        width: 25vw
+      .navbar-text
+        display: inline-block
+        clear: both
+        margin-right: 12px
+header
+  background-image: url(../images/bg.jpg)
+  background-size: cover
+  background-attachment: fixed
+  background-position: 50% 85%
+  margin-bottom: 0
+  .container
+    color: #555
+    padding: 200px 0px
+  .heading
+    font-size: 4rem
+    color: #fff
+    text-shadow: 0px 0px 10px #333
+  .text
+    font-size: 2rem
+    font-weight: 300
+    color: #fff
+    text-shadow: 0px 0px 10px #333
+  .btn-custom
+    transition: 0.25s
+    border-radius: 30px
+    padding: 16px 60px
+    font-size: 1.8rem
+    margin: 20px auto
+    background-color: #b73030
+    border-color: transparent
+    color: #fff
+    &:hover
+      background-color: #ec3d3d
+      color: #fff
+      border-color: #ec3d3d
+section#current-block,section#previous-block,section#closed-block,section#rank
+  background-color: #F2F2F2
+  padding-top: 60px
+  position: relative
+  .veritcal
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(15%)
+  .heading
+    font-size: 3.0rem
+    color: #151719
+    // text-shadow: 0px 0px 10px #b5b5b5
+  // hr
+  //   width: 50%
+  //   border-width: 1px 0
+  //   border-style: solid
+  //   border-color: #e3e3e3
+  //   height: 4px
+  //   margin-bottom: 40px
+  .view
+    // background-color: #333
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.7)),url("https://cimg.cnyes.cool/prod/news/3943773/l/c2a9717b3667bc5eacfb01dc47b04105.jpg")
+    // background-image: none
+    background-size: 100% 100%
+    background-position: center
+    background-repeat: no-repeat
+    width: 100%
+    height: 480px
+    margin: 0 auto
+    position: relative
+    // img
+    //   display: block
+    //   max-width: 100%
+    //   height: 
+    .description
+      position: absolute
+      bottom: 20px
+      right: 0
+      left: 0
+    .title
+      color: #fff
+      font-size: 2.4rem
+      // position: absolute
+      // z-index: 3
+      // bottom: 48px
+      // left: 50%
+      // transform: translateX(-50%)
+      // text-shadow: 0px 0px 10px #b5b5b5
+    .text
+      color: #fff
+      font-size: 1.4rem
+      // position: absolute
+      // z-index: 3
+      // bottom: 20px
+      // left: 50%
+      // transform: translateX(-50%)
+      // text-shadow: 0px 0px 10px #c5c5c5
+  .timer
+    font-size: 2.2rem
+  .people
+    font-size: 1.6rem
+  .btn-custom
+    margin: 20px 22px
+    padding: 16px 24px
+    font-size: 1.8rem
+    border-color: transparent
+    color: #fff
+    background-color: #4f77a5
+    border-radius: 30px
+    // display: none
+    &:hover
+      background-color: #538bde
+      color: #fff
+    &:focus
+      outline: none
+      color: #fff
+      background-color: #4f77a5
+    &:active
+      background-color: #60758d
+      color: #fff
+  .btn-answer,.btn-timeout
+    padding: 8px 24px
+    font-size: 1.8rem
+    margin: 20px 20px
+    border-color: transparent
+    color: #fff
+    background-color: #2f4156
+    border-radius: 0px
+    cursor: default
+    // display: none
+    &:focus
+      outline: none
+    &:active
+      box-shadow: initial
+  .btn-timeout
+    display: none
+section#current-block
+  .row:nth-child(3)
+    margin-top: 20px
+section#previous-block,section#closed-block
+  padding-top: 10px
+.file-upload-content 
+  display: none
+  text-align: center
+
+
+.file-upload-input 
+  position: absolute
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  outline: none
+  opacity: 0
+  cursor: pointer
+
+.image-upload-wrap
+  margin-top: 20px
+  border: 4px dashed #4f77a5
+  position: relative
+  height: 45vh
+.image-dropping,.image-upload-wrap:hover
+  background-color: #4f77a5
+  border: 4px dashed #ffffff
+.image-title-wrap
+  padding: 0 15px 15px 15px
+  color: #222
+.drag-text
+  text-align: center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+  h3
+    font-weight: 100
+    text-transform: uppercase
+    color: #8da9d2
+    padding: 175px 0
+.file-upload-image
+  max-height: 200px
+  max-width: 200px
+  margin: auto
+  padding: 20px
+.remove-image
+  width: 200px
+  margin: 0
+  color: #fff
+  background: #cd4535
+  border: none
+  padding: 10px
+  border-radius: 4px
+  border-bottom: 4px solid #b02818
+  transition: all .2s ease
+  outline: none
+  text-transform: uppercase
+  font-weight: 700
+  &:hover
+    background: #c13b2a
+    color: #ffffff
+    transition: all .2s ease
+    cursor: pointer
+  &:active
+    border: 0
+    transition: all .2s ease
+@media screen and (max-width: 767px)
+  section#current-block,section#previous-block,section#closed-block,section#rank
+    .view
+      height: 248px
+  section#rank
+    .name
+      font-size: 2rem
+      text-align: center
+    .detail
+      text-align: center
+      .times:last-child
+        margin-right: 0
+#login,#register,#forget,#sent,#reset-password
+  .modal-content
+    padding: 25px 40px
+    a
+      float: right
+      color: #4f77a5
+    a#goto-register,a#goto-login
+      margin-top: 15px
+    a#goto-forget
+      margin-bottom: 15px
+  .modal-header
+    .modal-title
+      font-size: 2.4rem
+      display: inline-block
+  .modal-body
+    .has-focus
+      .input-group-addon
+        border-color: #538bde
+      .form-control
+        border-color: #538bde
+    .input-group-addon
+      background-color: #FFF
+      border-right: 0px
+    .input-group
+      margin-bottom: 15px
+    .form-control
+      border-left: 0px
+      -webkit-box-shadow: none
+      box-shadow: none
+      padding-left: 0px
+    .help-block
+      margin: 0
+    .context
+      display: block
+      margin-bottom: 15px
+    .prompt
+      display: block
+      text-align: right
+      margin-top: 15px
+    .btn-primary
+      background-color: #4f77a5
+      border-color: #4f77a5
+    .btn-custom
+      padding: 8px 64px
+    .btn-cancel
+      background-color: #FFF
+      color: #4f77a5
+    .btn-right
+      float: right
+    .highlight
+      // display: block
+      margin: 20px auto
+      color: #aaa
+      font-size: 1.6rem
+#login
+  #login-email-group,#login-password-group
+    .input-group
+      margin-bottom: 15px
+    .help-block
+      margin-top: 0px
+      margin-bottom: 0px
+#play-current,#play-previous
+  .answer
+    font-weight: bold
+    padding-left: 4px
+  .btn-custom
+    margin: 12px 8px
+    padding: 8px 16px
+    font-size: 1.8rem
+footer
+  background-color: $color_gray
+  color: #fff
+  text-align: center
+  padding: 30px 0px
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  p
+    margin-bottom: 0px
+@media screen and (min-width: 768px)
+  #login,#register,#forget,#sent,#reset-password
+    .modal-dialog
+      margin-top: 180px
+  #alert
+    .modal-dialog
+      margin-top: 165px
+
+    
