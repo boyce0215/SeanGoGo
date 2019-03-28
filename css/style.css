@@ -122,7 +122,7 @@ section#current-block, section#previous-block, section#closed-block, section#ran
     transform: translateX(-50%) translateY(15%); }
   section#current-block .heading, section#previous-block .heading, section#closed-block .heading, section#rank .heading {
     font-size: 3rem;
-    color: #151719; }
+    color: #4c5d6f; }
   section#current-block .view, section#previous-block .view, section#closed-block .view, section#rank .view {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.7)), url("https://cimg.cnyes.cool/prod/news/3943773/l/c2a9717b3667bc5eacfb01dc47b04105.jpg");
     background-size: 100% 100%;
@@ -254,6 +254,43 @@ section#previous-block, section#closed-block {
   .remove-image:active {
     border: 0;
     transition: all 0.2s ease; }
+
+.cat {
+  background-image: url("../images/cat.png");
+  background-size: contain;
+  display: inline-block;
+  width: 60px;
+  height: 60px; }
+
+.dog {
+  background-image: url("../images/dog.png");
+  background-size: contain;
+  display: inline-block;
+  width: 60px;
+  height: 60px; }
+
+.progress {
+  width: 80%;
+  display: inline-block; }
+
+.prev, .next {
+  line-height: 47vh; }
+  .prev span, .next span {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    color: #60758d;
+    border: 3px solid #60758d;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s; }
+    .prev span:hover, .next span:hover {
+      opacity: 1;
+      color: #fff;
+      background-color: #60758d;
+      border: 3px solid #60758d; }
 
 @media screen and (max-width: 767px) {
   section#current-block .view, section#previous-block .view, section#closed-block .view, section#rank .view {

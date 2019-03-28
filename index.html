@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top font-sans">
       <div class="container">
-        <div class="navbar-header"><a class="navbar-brand"><strong>貓狗辨視</strong></a></div>
+        <div class="navbar-header"><a class="navbar-brand"> <img src="images/logo.png" style="width:22px;height:22px;display:inline-block"/><strong style="vertical-align:middle;">貓狗辨視</strong></a></div>
         <div id="visitors">
           <div class="nav navbar-nav navbar-right">
             <button class="btn btn-default navbar-btn btn-custom" type="button" data-target="#login" data-toggle="modal">登入</button>
@@ -32,18 +32,30 @@
       <div class="container text-center font-sans veritcal">
         <h2 class="heading">上傳貓貓狗狗吧</h2>
         <div class="row">
-          <div class="col-sm-12 content image-upload-wrap">
-            <input class="file-upload-input" type="file" onchange="readURL(this);" accept="images/*"/>
-            <div class="drag-text">
-              <h3>點擊或將圖片拖曳到這裡</h3>
+          <div class="col-sm-1 prev"><span class="glyphicon glyphicon-chevron-left"></span></div>
+          <div class="col-sm-10 content">
+            <div class="image-upload-wrap">
+              <input class="file-upload-input" type="file" onchange="readURL(this);" accept="images/*"/>
+              <div class="drag-text">
+                <h3>點擊或將圖片拖曳到這裡</h3>
+              </div>
+            </div>
+            <div class="file-upload-content"><img class="file-upload-image" src="#" alt="你的圖片"/>
+              <div class="image-title-wrap">
+                <button class="remove-image" type="button" onclick="removeUpload()">移除圖片<span class="image-title">uploaded image</span></button>
+              </div>
             </div>
           </div>
-          <div class="col-sm-12 content file-upload-content"><img class="file-upload-image" src="#" alt="你的圖片"/>
-            <div class="image-title-wrap">
-              <button class="remove-image" type="button" onclick="removeUpload()">移除圖片<span class="image-title">uploaded image</span></button>
-            </div>
-          </div>
+          <div class="col-sm-1 next"><span class="glyphicon glyphicon-chevron-right"></span></div>
           <button class="btn btn-default btn-custom" type="button" data-target="#result" data-toggle="modal">辨識是貓還是狗</button>
+          <div class="col-sm-12 content" id="cat-vs-dog">
+            <div class="cat"></div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:45%;min-width: 2em">45%</div>
+              <div class="progress-bar progress-bar-success progress-bar-striped active-bar" role="progressbar" style="width:55%;min-width: 2em">55%</div>
+            </div>
+            <div class="dog"></div>
+          </div>
         </div>
       </div>
     </section>

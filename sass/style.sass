@@ -130,7 +130,7 @@ section#current-block,section#previous-block,section#closed-block,section#rank
     transform: translateX(-50%) translateY(15%)
   .heading
     font-size: 3.0rem
-    color: #151719
+    color: #4c5d6f
     // text-shadow: 0px 0px 10px #b5b5b5
   // hr
   //   width: 50%
@@ -284,6 +284,39 @@ section#previous-block,section#closed-block
   &:active
     border: 0
     transition: all .2s ease
+.cat
+  background-image: url("../images/cat.png")
+  background-size: contain
+  display: inline-block
+  width: 60px
+  height: 60px
+.dog
+  background-image: url("../images/dog.png")
+  background-size: contain
+  display: inline-block
+  width: 60px
+  height: 60px
+.progress
+  width: 80%
+  display: inline-block 
+.prev,.next
+  line-height: 47vh
+  span
+    width: 40px
+    height: 40px
+    font-size: 20px
+    line-height: 32px
+    text-align: center
+    color: #60758d
+    border: 3px solid #60758d
+    border-radius: 50%
+    cursor: pointer
+    transition: 0.25s
+    &:hover
+      opacity: 1
+      color: #fff
+      background-color: #60758d
+      border: 3px solid #60758d
 @media screen and (max-width: 767px)
   section#current-block,section#previous-block,section#closed-block,section#rank
     .view

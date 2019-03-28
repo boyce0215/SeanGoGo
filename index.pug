@@ -12,7 +12,9 @@ html(lang="zh-hant-tw")
     nav.navbar.navbar-default.navbar-fixed-top.font-sans
       .container
         .navbar-header
-          a.navbar-brand <strong>貓狗辨視</strong>
+          a.navbar-brand 
+            img(src="images/logo.png" style="width:22px;height:22px;display:inline-block;")
+            <strong style="vertical-align:middle;">貓狗辨視</strong>
         #visitors
           .nav.navbar-nav.navbar-right
             button.btn.btn-default.navbar-btn.btn-custom(type="button" data-target="#login" data-toggle="modal") 登入
@@ -26,16 +28,27 @@ html(lang="zh-hant-tw")
       .container.text-center.font-sans.veritcal
         h2.heading 上傳貓貓狗狗吧
         .row
-          .col-sm-12.content.image-upload-wrap
-            input.file-upload-input(type="file" onchange="readURL(this);" accept="images/*")
-            .drag-text
-              h3 點擊或將圖片拖曳到這裡
-          .col-sm-12.content.file-upload-content
-            img.file-upload-image(src="#", alt="你的圖片")
-            .image-title-wrap
-              button.remove-image(type="button" onclick="removeUpload()") 移除圖片
-                span.image-title uploaded image
+          .col-sm-1.prev
+            span.glyphicon.glyphicon-chevron-left
+          .col-sm-10.content
+            .image-upload-wrap
+              input.file-upload-input(type="file" onchange="readURL(this);" accept="images/*")
+              .drag-text
+                h3 點擊或將圖片拖曳到這裡
+            .file-upload-content
+              img.file-upload-image(src="#", alt="你的圖片")
+              .image-title-wrap
+                button.remove-image(type="button" onclick="removeUpload()") 移除圖片
+                  span.image-title uploaded image
+          .col-sm-1.next
+            span.glyphicon.glyphicon-chevron-right
           button.btn.btn-default.btn-custom(type="button" data-target="#result" data-toggle="modal") 辨識是貓還是狗
+          .col-sm-12.content#cat-vs-dog
+            .cat
+            .progress
+              .progress-bar.progress-bar-striped.active(role="progressbar" style="width:45%;min-width: 2em;") 45%
+              .progress-bar.progress-bar-success.progress-bar-striped.active-bar(role="progressbar" style="width:55%;min-width: 2em;") 55%
+            .dog
     .modal.fade.work-detail#login(role="dialog")
       .modal-dialog
         .modal-content.font-sans
