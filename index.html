@@ -15,32 +15,16 @@
     <nav class="navbar navbar-default navbar-fixed-top font-sans">
       <div class="container">
         <div class="navbar-header"><a class="navbar-brand"> <img src="images/logo.png" style="width:22px;height:22px;display:inline-block"/><strong style="vertical-align:middle;">貓狗辨視</strong></a></div>
-        <div id="visitors">
-          <div class="nav navbar-nav navbar-right">
-            <button class="btn btn-default navbar-btn btn-custom" type="button" data-target="#login" data-toggle="modal">登入</button>
-            <button class="btn btn-default navbar-btn btn-custom" type="button" data-target="#register" data-toggle="modal">註冊</button>
-          </div>
-        </div>
-        <div id="member">
-          <div class="navbar-web">
-            <div class="nav navbar-nav navbar-right"><span id="member-id">e032386@gmail.com</span>
-              <button class="btn btn-default navbar-btn btn-custom" id="logout-button" type="button">登出</button>
-            </div>
-          </div>
-        </div>
       </div>
     </nav>
     <section id="current-block">
       <div class="container text-center font-sans veritcal">
         <h2 class="heading">上傳貓貓狗狗吧</h2>
         <div class="row">
-          <div class="col-sm-1 prev"><span class="glyphicon glyphicon-chevron-left"></span></div>
-          <div class="col-sm-10 content">
+          <div class="col-sm-8 col-sm-offset-2 content">
             <div class="image-upload-wrap">
+              <label class="drag-text">點擊或將圖片拖曳到這裡</label>
               <input class="file-upload-input" type="file" onchange="readURL(this);" accept="images/*"/>
-              <div class="drag-text">
-                <h3>點擊或將圖片拖曳到這裡</h3>
-              </div>
             </div>
             <div class="file-upload-content"><img class="file-upload-image" src="#" alt="你的圖片"/>
               <div class="image-title-wrap">
@@ -48,139 +32,23 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-1 next"><span class="glyphicon glyphicon-chevron-right"></span></div>
-          <button class="btn btn-default btn-custom" type="button" data-target="#result" data-toggle="modal">辨識是貓還是狗</button>
-          <div class="col-sm-12 content" id="cat-vs-dog">
+          <button class="btn btn-default btn-custom" type="button" onclick="setloading()">辨識是貓還是狗</button>
+          <div class="col-sm-8 col-sm-offset-2 content" id="loading-bar" data-second="5" style="display:none">
+            <div class="progress">
+              <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"></div>
+            </div>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2 content" id="cat-vs-dog" style="display:none">
             <div class="cat"></div>
             <div class="progress">
               <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:45%;min-width:2em">45%</div>
-              <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:55%;min-width:2em">55%</div>
+              <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:55%;min-width:1em">55%</div>
             </div>
             <div class="dog"></div>
           </div>
         </div>
       </div>
     </section>
-    <div class="modal fade work-detail" id="login" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content font-sans">
-          <div class="modal-header">
-            <h4 class="modal-title">登入</h4><a id="goto-register" herf="#">還沒有帳號？前往註冊 ></a>
-          </div>
-          <div class="modal-body">
-            <form id="login-form" method="post">
-              <div class="form-group" id="login-email-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-envelope"></i></span>
-                  <input class="form-control" id="email" placeholder="電子郵件"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <div class="form-group" id="login-passsword-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                  <input class="form-control" id="password" placeholder="密碼"/>
-                </div><span class="help-block with-errors"></span>
-              </div><a id="goto-forget" herf="#">忘記密碼?</a>
-              <button class="btn btn-primary btn-block" type="submit" name="login_home" value="Login_Home">登入</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade work-detail" id="register" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content font-sans">
-          <div class="modal-header">
-            <h4 class="modal-title">註冊</h4><a id="goto-login" herf="#">已經有帳號？登入 ></a>
-          </div>
-          <div class="modal-body">
-            <form id="register-form" data-toggle="validator" role="form" method="post">
-              <div class="form-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-envelope"></i></span>
-                  <input class="form-control" id="email" placeholder="電子郵件"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <div class="form-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                  <input class="form-control" id="password" placeholder="密碼"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <div class="form-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                  <input class="form-control" id="re-password" placeholder="確認密碼"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <button class="btn btn-primary btn-block" type="submit" name="register_home" value="Register_Home">註冊</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade work-detail" id="forget" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content font-sans">
-          <div class="modal-header">
-            <h4 class="modal-title">忘記密碼</h4>
-          </div>
-          <div class="modal-body"><span class="context">請輸入註冊時設定的電子郵件帳號<br>我們將寄送一封電子郵件協助您重設密碼</span>
-            <form>
-              <div class="input-group"><span class="input-group-addon"><i class="fas fa-envelope"></i></span>
-                <input class="form-control" id="email" placeholder="電子郵件"/>
-              </div>
-              <button class="btn btn-primary btn-custom btn-cancel" type="cancel">取消</button>
-              <button class="btn btn-primary btn-custom btn-right" id="goto-sent" type="submit">重設密碼</button>
-            </form><span class="prompt">電子郵件將在數分鐘後送達</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade work-detail" id="sent" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content font-sans">
-          <div class="modal-header">
-            <h4 class="modal-title">重設密碼郵件已發送</h4>
-          </div>
-          <div class="modal-body"><span>我們已經寄送一封重設密碼郵件至您的信箱<br></span><span>danny@cmoney.com.tw</span><span><br>請依照指示重設密碼</span><span class="highlight"><br>沒有收到密碼重設信嗎？</span>
-            <button class="btn btn-primary btn-custom btn-right" type="submit">再寄一次</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade work-detail" id="reset-password" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content font-sans">
-          <div class="modal-header">
-            <h4 class="modal-title">重設密碼</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                  <input class="form-control" id="password" placeholder="新密碼"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <div class="form-group">
-                <div class="input-group"><span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                  <input class="form-control" id="re-password" placeholder="確認新密碼"/>
-                </div><span class="help-block with-errors"></span>
-              </div>
-              <button class="btn btn-primary btn-custom btn-cancel" type="cancel">取消</button>
-              <button class="btn btn-primary btn-custom btn-right" id="goto-sent" type="submit">重設密碼</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade work-detail" id="result" role="dialog">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content font-sans">
-          <div class="modal-body text-center">
-            <form id="play-form" method="post">
-              <h3 class="title">這是一隻狗</h3>
-              <button class="btn btn-primary btn-custom answer-select" type="submit">重新上傳</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer>
       <div class="container">
         <p>Copyright © 2019s test. All Rights Reserved.</p>
@@ -191,4 +59,15 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/validator.min.js"></script>
   <script src="js/index.js"></script>
+  <script>
+    function setloading(){
+      $("#loading-bar").show();
+      var second = $("#loading-bar").data("second");
+      $("#loading-bar").find(".progress-bar").css("animation-duration",second+"s");
+      setTimeout(function(){
+        $("#loading-bar").hide();
+        $("#cat-vs-dog").show();
+      },second*1000);
+    }
+  </script>
 </html>
