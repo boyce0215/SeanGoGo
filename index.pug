@@ -37,8 +37,8 @@ html(lang="zh-hant-tw")
           .col-sm-8.col-sm-offset-2.content#cat-vs-dog(style="display:none")
             .cat
             .progress
-              .progress-bar.progress-bar-striped.active(role="progressbar" style="width:45%;min-width:2em") 45%
-              .progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" style="width:55%;min-width:1em") 55%
+              #cat-probability.progress-bar.progress-bar-striped.active(role="progressbar") 45%
+              #dog-probability.progress-bar.progress-bar-success.progress-bar-striped.active.pull-right(role="progressbar") 55%
             .dog
     footer
       .container
@@ -49,11 +49,14 @@ html(lang="zh-hant-tw")
   script(src="js/index.js")
   script.
     function setloading(){
+      $("#cat-vs-dog").hide();
+      $("#cat-vs-dog").removeClass("animation-show");
       $("#loading-bar").show();
       var second = $("#loading-bar").data("second");
       $("#loading-bar").find(".progress-bar").css("animation-duration",second+"s");
       setTimeout(function(){
         $("#loading-bar").hide();
         $("#cat-vs-dog").show();
+        $("#cat-vs-dog").addClass("animation-show");
       },second*1000);
     }

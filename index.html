@@ -41,8 +41,8 @@
           <div class="col-sm-8 col-sm-offset-2 content" id="cat-vs-dog" style="display:none">
             <div class="cat"></div>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:45%;min-width:2em">45%</div>
-              <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:55%;min-width:1em">55%</div>
+              <div class="progress-bar progress-bar-striped active" id="cat-probability" role="progressbar">45%</div>
+              <div class="progress-bar progress-bar-success progress-bar-striped active pull-right" id="dog-probability" role="progressbar">55%</div>
             </div>
             <div class="dog"></div>
           </div>
@@ -61,12 +61,15 @@
   <script src="js/index.js"></script>
   <script>
     function setloading(){
+      $("#cat-vs-dog").hide();
+      $("#cat-vs-dog").removeClass("animation-show");
       $("#loading-bar").show();
       var second = $("#loading-bar").data("second");
       $("#loading-bar").find(".progress-bar").css("animation-duration",second+"s");
       setTimeout(function(){
         $("#loading-bar").hide();
         $("#cat-vs-dog").show();
+        $("#cat-vs-dog").addClass("animation-show");
       },second*1000);
     }
   </script>

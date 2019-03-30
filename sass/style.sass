@@ -224,8 +224,6 @@ section#previous-block,section#closed-block
 .file-upload-content 
   display: none
   text-align: center
-
-
 .file-upload-input 
   position: absolute
   margin: 0
@@ -289,6 +287,8 @@ section#previous-block,section#closed-block
   display: inline-block
   width: 60px
   height: 60px
+  opacity: 0
+  transition: opacity 1s
   &::after
     content: "阿貓"
     position: absolute
@@ -304,6 +304,8 @@ section#previous-block,section#closed-block
   display: inline-block
   width: 60px
   height: 60px
+  opacity: 0
+  transition: opacity 1s
   &::after
     content: "阿狗"
     position: absolute
@@ -324,7 +326,12 @@ section#previous-block,section#closed-block
     width: 0%
   100% 
     width: 100%
-
+.animation-show .cat,.animation-show .dog
+  opacity: 1
+#cat-probability,#dog-probability
+  width: 0%
+  transition: width 2s
+  transition-delay: 1s
 .prev,.next
   line-height: 47vh
   span
