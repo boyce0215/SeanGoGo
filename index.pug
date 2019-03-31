@@ -51,6 +51,8 @@ html(lang="zh-hant-tw")
     function setloading(){
       $("#cat-vs-dog").hide();
       $("#cat-vs-dog").removeClass("animation-show");
+      $("#cat-probability").css("width","0%");
+      $("#dog-probability").css("width","0%");
       $("#loading-bar").show();
       var second = $("#loading-bar").data("second");
       $("#loading-bar").find(".progress-bar").css("animation-duration",second+"s");
@@ -58,5 +60,7 @@ html(lang="zh-hant-tw")
         $("#loading-bar").hide();
         $("#cat-vs-dog").show();
         $("#cat-vs-dog").addClass("animation-show");
+        $("#cat-probability").css("width","45%");
+        $("#dog-probability").css("width","55%");
       },second*1000);
     }
